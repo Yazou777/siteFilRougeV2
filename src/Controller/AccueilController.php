@@ -37,6 +37,10 @@ class AccueilController extends AbstractController
 
         return $this->render('accueil/indexSousCat.html.twig', [
             'findby' => $findby,
+            "chemin_de_fer" => [
+                // [ "name" => "Accueil", "link" => "/"],
+                [ "name" => $cat_nom,"link" => ""],
+               ]
          ]);
     }
 }
