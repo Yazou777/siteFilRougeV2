@@ -40,6 +40,27 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'com_uti', targetEntity: Commande::class)]
     private Collection $commandes;
 
+    #[ORM\Column(length: 255)]
+    private ?string $uti_rue = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $uti_ville = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $uti_nom = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $uti_prenom = null;
+
+    #[ORM\Column(length: 10)]
+    private ?string $uti_telephone = null;
+
+    #[ORM\Column(length: 5)]
+    private ?string $uti_code_postal = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $uti_pays = null;
+
     public function __construct()
     {
         $this->utilisateurs = new ArrayCollection();
@@ -185,6 +206,90 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
                 $commande->setComUti(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUtiRue(): ?string
+    {
+        return $this->uti_rue;
+    }
+
+    public function setUtiRue(string $uti_rue): static
+    {
+        $this->uti_rue = $uti_rue;
+
+        return $this;
+    }
+
+    public function getUtiVille(): ?string
+    {
+        return $this->uti_ville;
+    }
+
+    public function setUtiVille(string $uti_ville): static
+    {
+        $this->uti_ville = $uti_ville;
+
+        return $this;
+    }
+
+    public function getUtiNom(): ?string
+    {
+        return $this->uti_nom;
+    }
+
+    public function setUtiNom(string $uti_nom): static
+    {
+        $this->uti_nom = $uti_nom;
+
+        return $this;
+    }
+
+    public function getUtiPrenom(): ?string
+    {
+        return $this->uti_prenom;
+    }
+
+    public function setUtiPrenom(string $uti_prenom): static
+    {
+        $this->uti_prenom = $uti_prenom;
+
+        return $this;
+    }
+
+    public function getUtiTelephone(): ?string
+    {
+        return $this->uti_telephone;
+    }
+
+    public function setUtiTelephone(string $uti_telephone): static
+    {
+        $this->uti_telephone = $uti_telephone;
+
+        return $this;
+    }
+
+    public function getUtiCodePostal(): ?string
+    {
+        return $this->uti_code_postal;
+    }
+
+    public function setUtiCodePostal(string $uti_code_postal): static
+    {
+        $this->uti_code_postal = $uti_code_postal;
+
+        return $this;
+    }
+
+    public function getUtiPays(): ?string
+    {
+        return $this->uti_pays;
+    }
+
+    public function setUtiPays(string $uti_pays): static
+    {
+        $this->uti_pays = $uti_pays;
 
         return $this;
     }

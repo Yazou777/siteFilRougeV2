@@ -314,12 +314,26 @@ class AppFixtures extends Fixture
         $commercial1->setemail("commercial1@gmail.com");
         $commercial1->setRoles([]);
         $commercial1->setPassword('123456');
+        $commercial1->setUtiRue('5 rue du commerce');
+        $commercial1->setUtiVille('Market City');
+        $commercial1->setUtiNom('Vendeur');
+        $commercial1->setUtiPrenom('Demerd');
+        $commercial1->setUtiTelephone('0606060606');
+        $commercial1->setUtiCodePostal('66666');
+        $commercial1->setUtiPays('France');
         $manager->persist($commercial1);
 
         $client1 = new Utilisateur();
         $client1->setemail("client1@gmail.com");
         $client1->setRoles([]);
         $client1->setPassword('123456');
+        $client1->setUtiRue('5 rue de jachete');
+        $client1->setUtiVille('Market City');
+        $client1->setUtiNom('Client1');
+        $client1->setUtiPrenom('Demerd');
+        $client1->setUtiTelephone('0606060606');
+        $client1->setUtiCodePostal('66666');
+        $client1->setUtiPays('France');
         $client1->setUtiCommercial($commercial1);
         $manager->persist($client1);
 
@@ -327,6 +341,13 @@ class AppFixtures extends Fixture
         $client2->setemail("client2@gmail.com");
         $client2->setRoles([]);
         $client2->setPassword('123456');
+        $client2->setUtiRue('5 rue de jachete');
+        $client2->setUtiVille('Sold City');
+        $client2->setUtiNom('Client2');
+        $client2->setUtiPrenom('Debil');
+        $client2->setUtiTelephone('0611223344');
+        $client2->setUtiCodePostal('66667');
+        $client2->setUtiPays('France');
         $client2->setUtiCommercial($commercial1);
         $manager->persist($client2);
 
