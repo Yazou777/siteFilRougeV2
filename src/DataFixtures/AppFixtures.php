@@ -7,6 +7,7 @@ use App\Entity\Panier;
 use App\Entity\Produit;
 use App\Entity\Commande;
 use App\Entity\Categorie;
+use App\Entity\Livraison;
 use App\Entity\Fournisseur;
 use App\Entity\Utilisateur;
 use App\Entity\BonLivraison;
@@ -366,13 +367,21 @@ class AppFixtures extends Fixture
 
  ////////////////////////////////////    
 
-        $bonL = new BonLivraison();
-        $manager->persist($bonL);
-        $commande1client1->addBonLivraison($bonL);
+        $bonL1 = new BonLivraison();
+        $manager->persist($bonL1);
+        $commande1client1->addBonLivraison($bonL1);
 
-        $bonL = new BonLivraison();
-        $manager->persist($bonL);
-        $commande2client1->addBonLivraison($bonL);
+        $bonL2 = new BonLivraison();
+        $manager->persist($bonL2);
+        $commande2client1->addBonLivraison($bonL2);
+
+//////////////////////////////////////////
+
+        $livraison = new Livraison();
+        $livraison->setLivQteLivrer(2);
+        $manager->persist($livraison);
+        $bonL1->addLivraison($livraison);
+        $consolePS5->addLivraison($livraison);
 
         $manager->flush();
 
