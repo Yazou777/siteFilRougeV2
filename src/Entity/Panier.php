@@ -29,6 +29,9 @@ class Panier
     #[ORM\JoinColumn(nullable: false)]
     private ?Produit $pan_pro = null;
 
+    #[ORM\Column(type: Types::DECIMAL, precision: 19, scale: 4, nullable: true)]
+    private ?string $pan_reduction = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -78,6 +81,18 @@ class Panier
     public function setPanPro(?Produit $pan_pro): static
     {
         $this->pan_pro = $pan_pro;
+
+        return $this;
+    }
+
+    public function getPanReduction(): ?string
+    {
+        return $this->pan_reduction;
+    }
+
+    public function setPanReduction(?string $pan_reduction): static
+    {
+        $this->pan_reduction = $pan_reduction;
 
         return $this;
     }
