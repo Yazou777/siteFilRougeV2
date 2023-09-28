@@ -22,12 +22,14 @@ class ProduitController extends AbstractController
        $catParentName= $categorieRepository->findOneBy(['id' => $catParentId])->getCatNom();
        $nbProduit = $produitRepository->nbProduit($cat);
        //$x= $nbProduit[0][1];
+     
      // dd($x);
         return $this->render('produit/index.html.twig', [
             // 'Produit' => $Produit,
             'findby' => $findby,
             'catParentName' => $catParentName,
             'nbProduit' => $nbProduit,
+            
             "chemin_de_fer" => [
                 ["name" => $catParentName, "link" => "/accueil/".$catParentName],
                  ["name" => $cat_nom, "link" => "/produit/".$cat_nom],
@@ -40,13 +42,17 @@ class ProduitController extends AbstractController
     {
         $proId = $produitRepository->findOneBy([ "pro_nom" => $pro_nom])->getId();
         $pro = $produitRepository->findOneBy([ "id" => $proId]);
+        $Description =  $produitRepository->findOneBy(['pro_nom' => $pro_nom])->getProDescription();
+        //dd($Description);
+        $description = explode('*',$Description);
        // dd($pro);
         //$SousCategorie = $produit->getSousCategorie();
        
         //$description = explode(":", $produit-> getDescription());
         //  dd($description);
         return $this->render('produit/detail.html.twig', [
-            'pro' => $pro
+            'pro' => $pro,
+            'description' => $description,
             // 'description' => $description,
             // 'Produit' => $produit,
             // "SousCategorie" => $SousCategorie,

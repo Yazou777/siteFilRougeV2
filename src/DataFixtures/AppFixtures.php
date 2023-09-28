@@ -38,6 +38,12 @@ class AppFixtures extends Fixture
         $jeuxPs5GodOfWar->setProNom("God of war");
         $jeuxPs5GodOfWar->setProPrix(79.99);
         $jeuxPs5GodOfWar->setProImage("ps5JeuxGodOfWar.jpg");
+        $jeuxPs5GodOfWar->setProDescription("Embarquez pour un voyage épique et émouvant, alors que Kratos et Atreus luttent pour s'accrocher et lâcher prise.*
+        Au cœur des royaumes nordiques déchirés par la fureur des Ases, ils ont tout fait pour empêcher la fin des temps. Mais malgré leurs efforts, Fimbulvetr approche dangereusement.*
+        Observez leur dynamique père-fils évoluer alors qu'ils luttent pour leur survie : Atreus assoiffé d'une connaissance qui pourra l'aider à comprendre la prophétie de « Loki », et Kratos peinant à se défaire de son passé et à devenir le père dont son fils a besoin.*
+        Voyez comment le destin leur imposera un choix : la sûreté des neuf royaumes ou la leur. Et pendant ce temps, Asgard rassemble ses forces...*
+        Ceux qui défient le destin*
+        Atreus part en quête du savoir qui l'aidera à comprendre la prophétie de « Loki » et le rôle qu'il doit jouer dans le Ragnarök. Kratos doit choisir entre rester paralysé par la peur de répéter ses erreurs ou se libérer du passé pour devenir le père dont Atreus a besoin.");
         $manager->persist($jeuxPs5GodOfWar);
         $sousCatPs5Jeux->addProduit($jeuxPs5GodOfWar);
 
