@@ -79,14 +79,14 @@ class AppFixtures extends Fixture
         $consolePS5HFW = new Produit();
         $consolePS5HFW->setProNom("Console PS5 standart + Horizon Forbidden West PS5");
         $consolePS5HFW->setProPrix(549.99);
-        $consolePS5HFW->setProImage("ps5Console+HorizonFW");
+        $consolePS5HFW->setProImage("ps5Console+HorizonFW.webp");
         $manager->persist($consolePS5HFW);
         $sousCatPs5Console->addProduit($consolePS5HFW);
 
         $consolePS5GOW = new Produit();
         $consolePS5GOW->setProNom("Console PS5 standart + God Of War Ragnarök PS5");
         $consolePS5GOW->setProPrix(549.99);
-        $consolePS5GOW->setProImage("ps5Console+GOW");
+        $consolePS5GOW->setProImage("ps5Console+GOW.webp");
         $manager->persist($consolePS5GOW);
         $sousCatPs5Console->addProduit($consolePS5GOW);
 
