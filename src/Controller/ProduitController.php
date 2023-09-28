@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Produit;
 use App\Entity\Categorie;
 use App\Repository\ProduitRepository;
 use App\Repository\CategorieRepository;
@@ -27,6 +28,28 @@ class ProduitController extends AbstractController
                 ["name" => $catParentName, "link" => "/accueil/".$catParentName],
                  ["name" => $cat_nom, "link" => "/produit/".$cat_nom],
             ]
+        ]);
+    }
+
+    #[Route('/detail_produit/{pro_nom}', name: 'app_detail')]
+    public function detail(ProduitRepository $produitRepository, $pro_nom): Response
+    {
+        $proId = $produitRepository->findOneBy([ "pro_nom" => $pro_nom])->getId();
+        //dd($proId);
+        //$SousCategorie = $produit->getSousCategorie();
+       
+        //$description = explode(":", $produit-> getDescription());
+        //  dd($description);
+        return $this->render('produit/detail.html.twig', [
+            // 'description' => $description,
+            // 'Produit' => $produit,
+            // "SousCategorie" => $SousCategorie,
+            // "chemin_de_fer" => [
+            //     // ["name" => "Accueil", "link" => "/"],
+            //     ["name" => $SousCategorie->getCategorie()->getNom(), "link" => "/sous_categorie/".$SousCategorie->getCategorie()->getId()],
+            //     ["name" => $produit->getSousCategorie()->getNom(), "link" => "/produit/".$produit->getSousCategorie()->getId()],
+            //     ["name" => $produit->getNom(), "link" => " "],
+            // ]
         ]);
     }
 }

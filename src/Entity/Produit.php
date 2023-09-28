@@ -34,7 +34,7 @@ class Produit
     #[ORM\Column(nullable: true)]
     private ?int $pro_stkale = null;
 
-    #[ORM\ManyToOne(inversedBy: 'produits')]
+    #[ORM\ManyToOne(inversedBy: 'produits', targetEntity: Categorie::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?categorie $cat = null;
 

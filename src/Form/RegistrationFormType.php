@@ -43,6 +43,13 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('uti_rue')
+            ->add('uti_ville')
+            ->add('uti_nom')
+            ->add('uti_prenom')
+            ->add('uti_telephone')
+            ->add('uti_code_postal')
+            ->add('uti_pays')
         ;
     }
 
