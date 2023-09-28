@@ -15,8 +15,7 @@
          }
         </style>
 
-        coucou
-{# <div class="container">
+<div class="container">
 <div class="row">
 
 
@@ -24,16 +23,16 @@
 <div class="container">
 <div class="row">
 <div class="fs-1">
-{{ Produit.nom }}
+{{ pro.proNom }}
 </div> 
 
-<img src="/images/{{ Produit.image }} " class="imgdetail mx-auto "> 
-<div class="bg-secondary mb-2 miniature">Miniature</div>
+<img src="/images/{{ pro.proImage }} " class="imgdetail mx-auto "> 
+<div class="bg-secondary mb2 miniature">Miniature</div>
 <div class="bg-secondary exempleSonore">Exemple sonore</div>
 <ul>
-{% for desc in description %}
+{# {% for desc in description %}
 <li>{{desc}}</li> 
-{% endfor %}
+{% endfor %} #}
 </ul>
 </div>
 </div>
@@ -42,9 +41,9 @@
 <div class="col-4 bg-secondary forSticky">
 
 <div class="fs-1 sticky-sm-top">
-{{ Produit.prix}}€
-    <a href="/add/{{Produit.id}}" class="btn btn-success">Ajouter au panier</a>
-
+{{ pro.proPrix}}€
+   {# <a href="/add/{{Produit.id}}" class="btn btn-success">Ajouter au panier</a> #}
+<a href="#" class="btn btn-success">Ajouter au panier</a>
 </div> 
 
 
@@ -55,5 +54,5 @@
 
 
  </div>
-</div>  #}
+</div> 
 {% endblock %}

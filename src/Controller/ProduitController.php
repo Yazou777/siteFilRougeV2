@@ -35,12 +35,14 @@ class ProduitController extends AbstractController
     public function detail(ProduitRepository $produitRepository, $pro_nom): Response
     {
         $proId = $produitRepository->findOneBy([ "pro_nom" => $pro_nom])->getId();
-        //dd($proId);
+        $pro = $produitRepository->findOneBy([ "id" => $proId]);
+       // dd($pro);
         //$SousCategorie = $produit->getSousCategorie();
        
         //$description = explode(":", $produit-> getDescription());
         //  dd($description);
         return $this->render('produit/detail.html.twig', [
+            'pro' => $pro
             // 'description' => $description,
             // 'Produit' => $produit,
             // "SousCategorie" => $SousCategorie,
