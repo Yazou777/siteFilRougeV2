@@ -41,7 +41,7 @@
 <div class="col-4 bg-secondary forSticky">
 
 <div class="fs-1 sticky-sm-top">
-{{ pro.proPrix}}€
+{{ pro.proPrix|number_format(2, '.', ',')}}€
    {# <a href="/add/{{Produit.id}}" class="btn btn-success">Ajouter au panier</a> #}
 <a href="#" class="btn btn-success">Ajouter au panier</a>
 </div> 

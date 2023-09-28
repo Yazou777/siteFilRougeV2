@@ -45,4 +45,26 @@ class ProduitRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+public function nbProduit($cat_id): array
+{
+    // automatically knows to select Products
+    // the "p" is an alias you'll use in the rest of the query
+    $qb = $this->createQueryBuilder('p')
+        ->select('count(p)')
+        ->where('p.cat = :cat_id')
+        ->setParameter('cat_id', $cat_id);
+       // ->orderBy('p.price', 'ASC');
+
+    // if (!$includeUnavailableProducts) {
+    //     $qb->andWhere('p.available = TRUE');
+    // }
+
+    $query = $qb->getQuery();
+
+    return $query->execute();
+
+    // to get just one result:
+    // $product = $query->setMaxResults(1)->getOneOrNullResult();
+}
 }

@@ -20,10 +20,14 @@ class ProduitController extends AbstractController
        $findby = $produitRepository->findBy(['cat' => $cat]);
        $catParentId = $categorieRepository->findOneBy([ "cat_nom" => $cat_nom])->getCatParent()->getId();
        $catParentName= $categorieRepository->findOneBy(['id' => $catParentId])->getCatNom();
-        //dd($findby);
+       $nbProduit = $produitRepository->nbProduit($cat);
+       //$x= $nbProduit[0][1];
+     // dd($x);
         return $this->render('produit/index.html.twig', [
             // 'Produit' => $Produit,
             'findby' => $findby,
+            'catParentName' => $catParentName,
+            'nbProduit' => $nbProduit,
             "chemin_de_fer" => [
                 ["name" => $catParentName, "link" => "/accueil/".$catParentName],
                  ["name" => $cat_nom, "link" => "/produit/".$cat_nom],
