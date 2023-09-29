@@ -125,11 +125,36 @@ class AppFixtures extends Fixture
         $categorieXboxSeries->setCatImage("xboxSeriesLogo.svg.png");
         $manager->persist($categorieXboxSeries);
 
+
+
         $sousCategorieXboxSeriesJeux = new Categorie();
         $sousCategorieXboxSeriesJeux->setCatNom("JEUX XBOX SERIES");
         $sousCategorieXboxSeriesJeux->setCatImage("xboxSeriesJeux.jpg");
         $sousCategorieXboxSeriesJeux->setCatParent($categorieXboxSeries);
         $manager->persist($sousCategorieXboxSeriesJeux);
+
+        $jeuxXboxSeriesCODMW3 = new Produit();
+        $jeuxXboxSeriesCODMW3->setProNom("Call of duty moderne warfare 3");
+        $jeuxXboxSeriesCODMW3->setProPrix(79.99);
+        $jeuxXboxSeriesCODMW3->setProImage("xboxSeriesJeuxCODMW3.jpg");
+        $manager->persist($jeuxXboxSeriesCODMW3);
+        $sousCategorieXboxSeriesJeux->addProduit($jeuxXboxSeriesCODMW3);
+
+        $jeuxXboxSeriesDeadSpace= new Produit();
+        $jeuxXboxSeriesDeadSpace->setProNom("Dead Space");
+        $jeuxXboxSeriesDeadSpace->setProPrix(79.99);
+        $jeuxXboxSeriesDeadSpace->setProImage("xboxSeriesJeuxDeadSpace.jpg");
+        $manager->persist($jeuxXboxSeriesDeadSpace);
+        $sousCategorieXboxSeriesJeux->addProduit($jeuxXboxSeriesDeadSpace);
+
+        $jeuxXboxSeriesStarfield= new Produit();
+        $jeuxXboxSeriesStarfield->setProNom("Starfield");
+        $jeuxXboxSeriesStarfield->setProPrix(79.99);
+        $jeuxXboxSeriesStarfield->setProImage("xboxSeriesJeuxStarfield.jpg");
+        $manager->persist($jeuxXboxSeriesStarfield);
+        $sousCategorieXboxSeriesJeux->addProduit($jeuxXboxSeriesStarfield);
+
+
 
         $sousCategorieXboxSeriesConsole = new Categorie();
         $sousCategorieXboxSeriesConsole->setCatNom("Consoles XBOX SERIES");
@@ -137,11 +162,55 @@ class AppFixtures extends Fixture
         $sousCategorieXboxSeriesConsole->setCatParent($categorieXboxSeries);
         $manager->persist($sousCategorieXboxSeriesConsole);
 
+        $consoleXboxSeries = new Produit();
+        $consoleXboxSeries->setProNom("Console Xbox Serie standart");
+        $consoleXboxSeries->setProPrix(499.99);
+        $consoleXboxSeries->setProImage("xboxSeriesConsoleStandart.jpg");
+        $manager->persist($consoleXboxSeries);
+        $sousCategorieXboxSeriesConsole->addProduit($consoleXboxSeries);
+
+        $consoleXboxSeriesD4 = new Produit();
+        $consoleXboxSeriesD4->setProNom("Console Xbox Serie standart + Diablo 4");
+        $consoleXboxSeriesD4->setProPrix(599.99);
+        $consoleXboxSeriesD4->setProImage("xboxSeriesConsole+diablo4.jpg");
+        $manager->persist($consoleXboxSeriesD4);
+        $sousCategorieXboxSeriesConsole->addProduit($consoleXboxSeriesD4);
+
+        $consoleXboxSeriesHalo = new Produit();
+        $consoleXboxSeriesHalo->setProNom("Console Xbox Serie standart + Halo Infinite");
+        $consoleXboxSeriesHalo->setProPrix(599.99);
+        $consoleXboxSeriesHalo->setProImage("xboxSeriesConsole+Halo.jpg");
+        $manager->persist($consoleXboxSeriesHalo);
+        $sousCategorieXboxSeriesConsole->addProduit($consoleXboxSeriesHalo);
+
+
+
         $sousCategorieXboxSeriesAccessoires = new Categorie();
         $sousCategorieXboxSeriesAccessoires->setCatNom("Accessoires XBOX SERIES");
         $sousCategorieXboxSeriesAccessoires->setCatImage("xboxSeriesAccessoire.jpg");
         $sousCategorieXboxSeriesAccessoires->setCatParent($categorieXboxSeries);
         $manager->persist($sousCategorieXboxSeriesAccessoires);
+
+        $accessoireXboxSeriesManette = new Produit();
+        $accessoireXboxSeriesManette->setProNom("Manette Wireless Xbox Series");
+        $accessoireXboxSeriesManette->setProPrix(69.99);
+        $accessoireXboxSeriesManette->setProImage("xboxSeriesAccessoireManette.jpg");
+        $manager->persist($accessoireXboxSeriesManette);
+        $sousCategorieXboxSeriesAccessoires->addProduit($accessoireXboxSeriesManette);
+
+        $accessoireXboxSeriesCasque = new Produit();
+        $accessoireXboxSeriesCasque->setProNom("Casque officiel Xbox Series");
+        $accessoireXboxSeriesCasque->setProPrix(99.99);
+        $accessoireXboxSeriesCasque->setProImage("xboxSeriesAccessoireCasque.jpg");
+        $manager->persist($accessoireXboxSeriesCasque);
+        $sousCategorieXboxSeriesAccessoires->addProduit($accessoireXboxSeriesCasque);
+
+        $accessoireXboxSeriesStationR = new Produit();
+        $accessoireXboxSeriesStationR->setProNom("Station Recharge pour Manette Xbox Series");
+        $accessoireXboxSeriesStationR->setProPrix(34.99);
+        $accessoireXboxSeriesStationR->setProImage("xboxSeriesAccessoireStationRecharge.jpg");
+        $manager->persist($accessoireXboxSeriesStationR);
+        $sousCategorieXboxSeriesAccessoires->addProduit($accessoireXboxSeriesStationR);
 ////////////////////////////////////
 
 
@@ -150,11 +219,36 @@ class AppFixtures extends Fixture
         $categorieSwitch->setCatImage("switchLogo.png");
         $manager->persist($categorieSwitch);
 
+
+
         $categorieSwitchJeux = new Categorie();
         $categorieSwitchJeux->setCatNom("JEUX Switch");
         $categorieSwitchJeux->setCatImage("switchJeux.jpg");
         $categorieSwitchJeux->setCatParent($categorieSwitch);
         $manager->persist($categorieSwitchJeux);
+
+        $jeuxSwitchMarioOD= new Produit();
+        $jeuxSwitchMarioOD->setProNom("Mario Odyssey");
+        $jeuxSwitchMarioOD->setProPrix(59.99);
+        $jeuxSwitchMarioOD->setProImage("switchJeuxMarioOdyssey.jpg");
+        $manager->persist($jeuxSwitchMarioOD);
+        $categorieSwitchJeux->addProduit($jeuxSwitchMarioOD);
+
+        $jeuxSwitchSplatoon2= new Produit();
+        $jeuxSwitchSplatoon2->setProNom("Splatoon 2");
+        $jeuxSwitchSplatoon2->setProPrix(59.99);
+        $jeuxSwitchSplatoon2->setProImage("switchJeuxSplatoon2.jpg");
+        $manager->persist($jeuxSwitchSplatoon2);
+        $categorieSwitchJeux->addProduit($jeuxSwitchSplatoon2);
+
+        $jeuxSwitchZeldaBOTW= new Produit();
+        $jeuxSwitchZeldaBOTW->setProNom("Zelda Breath Of The Wild");
+        $jeuxSwitchZeldaBOTW->setProPrix(59.99);
+        $jeuxSwitchZeldaBOTW->setProImage("switchJeuxZeldaBOTW.webp");
+        $manager->persist($jeuxSwitchZeldaBOTW);
+        $categorieSwitchJeux->addProduit($jeuxSwitchZeldaBOTW);
+
+
 
         $categorieSwitchConsole = new Categorie();
         $categorieSwitchConsole->setCatNom("Consoles Switch");
@@ -162,11 +256,54 @@ class AppFixtures extends Fixture
         $categorieSwitchConsole->setCatParent($categorieSwitch);
         $manager->persist($categorieSwitchConsole);
 
+        $consoleSwitch = new Produit();
+        $consoleSwitch->setProNom("Console Switch Standart");
+        $consoleSwitch->setProPrix(349.99);
+        $consoleSwitch->setProImage("switchConsoleStandart.jpg");
+        $manager->persist($consoleSwitch);
+        $categorieSwitchConsole->addProduit($consoleSwitch);
+
+        $consoleSwitchMK8 = new Produit();
+        $consoleSwitchMK8->setProNom("Console Switch Standart + Mario Kart 8");
+        $consoleSwitchMK8->setProPrix(449.99);
+        $consoleSwitchMK8->setProImage("switchConsole+MK8.jpg");
+        $manager->persist($consoleSwitchMK8);
+        $categorieSwitchConsole->addProduit($consoleSwitchMK8);
+
+        $consoleSwitchSports = new Produit();
+        $consoleSwitchSports->setProNom("Console Switch Standart + Sports");
+        $consoleSwitchSports->setProPrix(449.99);
+        $consoleSwitchSports->setProImage("switchConsole+Sports.jpg");
+        $manager->persist($consoleSwitchSports);
+        $categorieSwitchConsole->addProduit($consoleSwitchSports);
+
+
         $categorieSwitchAccesoires = new Categorie();
         $categorieSwitchAccesoires->setCatNom("Accessoires Switch");
         $categorieSwitchAccesoires->setCatImage("switchAccessoire.png");
         $categorieSwitchAccesoires->setCatParent($categorieSwitch);
         $manager->persist($categorieSwitchAccesoires);
+
+        $accessoireSwitchJoyCon = new Produit();
+        $accessoireSwitchJoyCon->setProNom("Joy-Con pour Nintendo Switch");
+        $accessoireSwitchJoyCon->setProPrix(69.99);
+        $accessoireSwitchJoyCon->setProImage("switchAccessoireJoyCon.jpg");
+        $manager->persist($accessoireSwitchJoyCon);
+        $categorieSwitchAccesoires->addProduit($accessoireSwitchJoyCon);
+
+        $accessoireSwitchMalette = new Produit();
+        $accessoireSwitchMalette->setProNom("Malette de rangement pour Nintendo Switch");
+        $accessoireSwitchMalette->setProPrix(34.99);
+        $accessoireSwitchMalette->setProImage("switchAccessoireMalette.jpg");
+        $manager->persist($accessoireSwitchMalette);
+        $categorieSwitchAccesoires->addProduit($accessoireSwitchMalette);
+
+        $accessoireSwitchManettePro = new Produit();
+        $accessoireSwitchManettePro->setProNom("Manette Pro pour Nintendo Switch");
+        $accessoireSwitchManettePro->setProPrix(14.99);
+        $accessoireSwitchManettePro->setProImage("switchAccessoireManettePro.jpg");
+        $manager->persist($accessoireSwitchManettePro);
+        $categorieSwitchAccesoires->addProduit($accessoireSwitchManettePro);
 ////////////////////////////////////////////
 
         $categoriePs4 = new Categorie();
