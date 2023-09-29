@@ -317,17 +317,84 @@ class AppFixtures extends Fixture
         $categoriePs4Jeux->setCatParent($categoriePs4);
         $manager->persist($categoriePs4Jeux);
 
+        $jeuxPs4GOW = new Produit();
+        $jeuxPs4GOW->setProNom("God of war ps4");
+        $jeuxPs4GOW->setProPrix(59.99);
+        $jeuxPs4GOW->setProImage("ps4JeuxGOW.jpg");
+        $manager->persist($jeuxPs4GOW);
+        $categoriePs4Jeux->addProduit($jeuxPs4GOW);
+
+        $jeuxPs4Rachet = new Produit();
+        $jeuxPs4Rachet->setProNom("Rachet & Clanck");
+        $jeuxPs4Rachet->setProPrix(59.99);
+        $jeuxPs4Rachet->setProImage("ps4JeuxRachet.jpg");
+        $manager->persist($jeuxPs4Rachet);
+        $categoriePs4Jeux->addProduit($jeuxPs4Rachet);
+
+        $jeuxPs4U4 = new Produit();
+        $jeuxPs4U4->setProNom("Uncharted 4");
+        $jeuxPs4U4->setProPrix(59.99);
+        $jeuxPs4U4->setProImage("ps4JeuxUncharted4.jpg");
+        $manager->persist($jeuxPs4U4);
+        $categoriePs4Jeux->addProduit($jeuxPs4U4);
+
+
+
         $categoriePs4Console = new Categorie();
         $categoriePs4Console->setCatNom("Consoles PS4");
         $categoriePs4Console->setCatImage("ps4Console.jpg");
         $categoriePs4Console->setCatParent($categoriePs4);
         $manager->persist($categoriePs4Console);
 
+        $consolePs4 = new Produit();
+        $consolePs4->setProNom("Console Ps4 Standart");
+        $consolePs4->setProPrix(399.99);
+        $consolePs4->setProImage("ps4ConsoleStandart.jpg");
+        $manager->persist($consolePs4);
+        $categoriePs4Console->addProduit($consolePs4);
+
+        $consolePs4Pro = new Produit();
+        $consolePs4Pro->setProNom("Console Ps4 Pro");
+        $consolePs4Pro->setProPrix(449.99);
+        $consolePs4Pro->setProImage("ps4ConsolePro.jpg");
+        $manager->persist($consolePs4Pro);
+        $categoriePs4Console->addProduit($consolePs4Pro);
+
+        $consolePs4CODMW2 = new Produit();
+        $consolePs4CODMW2->setProNom("Console Ps4 Standart + Call Of Duty Moderne Warfare 2");
+        $consolePs4CODMW2->setProPrix(449.99);
+        $consolePs4CODMW2->setProImage("ps4Console+CODMW2.jpg");
+        $manager->persist($consolePs4CODMW2);
+        $categoriePs4Console->addProduit($consolePs4CODMW2);
+
+
+
         $categoriePs4Accessoires = new Categorie();
         $categoriePs4Accessoires->setCatNom("Accessoires PS4");
         $categoriePs4Accessoires->setCatImage("ps4Accessoire.jpg");
         $categoriePs4Accessoires->setCatParent($categoriePs4);
         $manager->persist($categoriePs4Accessoires);
+
+        $accessoirePs4Manette = new Produit();
+        $accessoirePs4Manette->setProNom("Manette Ps4 Officiel");
+        $accessoirePs4Manette->setProPrix(59.99);
+        $accessoirePs4Manette->setProImage("ps4AccessoireManette.jpg");
+        $manager->persist($accessoirePs4Manette);
+        $categoriePs4Accessoires->addProduit($accessoirePs4Manette);
+
+        $accessoirePs4Pulse3D = new Produit();
+        $accessoirePs4Pulse3D->setProNom("Pulse 3D sans fil");
+        $accessoirePs4Pulse3D->setProPrix(89.99);
+        $accessoirePs4Pulse3D->setProImage("ps4AccessoirePulse3D.jpg");
+        $manager->persist($accessoirePs4Pulse3D);
+        $categoriePs4Accessoires->addProduit($accessoirePs4Pulse3D);
+
+        $accessoirePs4T300 = new Produit();
+        $accessoirePs4T300->setProNom("Thrustmaster T300 RS GT Racing Wheel");
+        $accessoirePs4T300->setProPrix(359);
+        $accessoirePs4T300->setProImage("ps4AccessoireT300.jpg");
+        $manager->persist($accessoirePs4T300);
+        $categoriePs4Accessoires->addProduit($accessoirePs4T300);
 ///////////////////////////////////////////////////
 
         $categorieXboxOne = new Categorie();
