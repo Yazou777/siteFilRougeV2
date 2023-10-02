@@ -408,17 +408,84 @@ class AppFixtures extends Fixture
         $categorieXboxOneJeux->setCatParent($categorieXboxOne);
         $manager->persist($categorieXboxOneJeux);
 
+        $jeuxXboxOneGears5 = new Produit();
+        $jeuxXboxOneGears5->setProNom("Gears Of War 5");
+        $jeuxXboxOneGears5->setProPrix(59.99);
+        $jeuxXboxOneGears5->setProImage("xboxOneJeuxGearsOfWar5.jpg");
+        $manager->persist($jeuxXboxOneGears5);
+        $categorieXboxOneJeux->addProduit($jeuxXboxOneGears5);
+
+        $jeuxXboxOneHalo = new Produit();
+        $jeuxXboxOneHalo->setProNom("Halo Xbox One");
+        $jeuxXboxOneHalo->setProPrix(59.99);
+        $jeuxXboxOneHalo->setProImage("xboxOneJeuxHalo.jpg");
+        $manager->persist($jeuxXboxOneHalo);
+        $categorieXboxOneJeux->addProduit($jeuxXboxOneHalo);
+
+        $jeuxXboxOneSOD2 = new Produit();
+        $jeuxXboxOneSOD2->setProNom("State Of Decay 2 Xbox One");
+        $jeuxXboxOneSOD2->setProPrix(59.99);
+        $jeuxXboxOneSOD2->setProImage("xboxOneJeuxSOD2.jpeg");
+        $manager->persist($jeuxXboxOneSOD2);
+        $categorieXboxOneJeux->addProduit($jeuxXboxOneSOD2);
+
+
+
         $categorieXboxOneConsole = new Categorie();
         $categorieXboxOneConsole->setCatNom("Consoles XBOX ONE");
         $categorieXboxOneConsole->setCatImage("xboxOneConsole.jpg");
         $categorieXboxOneConsole->setCatParent($categorieXboxOne);
         $manager->persist($categorieXboxOneConsole);
 
+        $consolexboxOne = new Produit();
+        $consolexboxOne->setProNom("Console Xbox One Standart");
+        $consolexboxOne->setProPrix(399.99);
+        $consolexboxOne->setProImage("xboxOneConsoleStandart.jpg");
+        $manager->persist($consolexboxOne);
+        $categorieXboxOneConsole->addProduit($consolexboxOne);
+
+        $consolexboxOneFifa15 = new Produit();
+        $consolexboxOneFifa15->setProNom("Console Xbox One Standart + Fifa 2015");
+        $consolexboxOneFifa15->setProPrix(449.99);
+        $consolexboxOneFifa15->setProImage("xboxOneConsole+fifa15.jpg");
+        $manager->persist($consolexboxOneFifa15);
+        $categorieXboxOneConsole->addProduit($consolexboxOneFifa15);
+
+        $consolexboxOneForzaH3 = new Produit();
+        $consolexboxOneForzaH3->setProNom("Console Xbox One Standart + Forza Hozizon 3");
+        $consolexboxOneForzaH3->setProPrix(449.99);
+        $consolexboxOneForzaH3->setProImage("xboxOneConsole+ForzaH3.jpg");
+        $manager->persist($consolexboxOneForzaH3);
+        $categorieXboxOneConsole->addProduit($consolexboxOneForzaH3);
+
+
+
         $categorieXboxOneAccesoires = new Categorie();
         $categorieXboxOneAccesoires->setCatNom("Accessoires XBOX ONE");
         $categorieXboxOneAccesoires->setCatImage("xboxOneAccessoire.jpg");
         $categorieXboxOneAccesoires->setCatParent($categorieXboxOne);
         $manager->persist($categorieXboxOneAccesoires);
+
+        $accessoireXboxOneAlim = new Produit();
+        $accessoireXboxOneAlim->setProNom("YCCTEAM Alimentation pour Xbox One AC Adaptateur Secteur Brique Bloc Chargeur Kit de Remplacement de Câble pour Xbox One Console, Auto Tension 100-240V");
+        $accessoireXboxOneAlim->setProPrix(32.99);
+        $accessoireXboxOneAlim->setProImage("xboxOneAccessoireAlimentation.jpg");
+        $manager->persist($accessoireXboxOneAlim);
+        $categorieXboxOneAccesoires->addProduit($accessoireXboxOneAlim);
+
+        $accessoireXboxOneBC = new Produit();
+        $accessoireXboxOneBC->setProNom("Batteries Manette pour Xbox One, Kits Batterie et Chargeur pour Manette Xbox Series X|S avec 2x2800mAh Batteries, Batterie Rechargeable pour Xbox Series X|S/One S/One X/One Elite");
+        $accessoireXboxOneBC->setProPrix(19.99);
+        $accessoireXboxOneBC->setProImage("xboxOneAccessoireBatterieChargeur.jpg");
+        $manager->persist($accessoireXboxOneBC);
+        $categorieXboxOneAccesoires->addProduit($accessoireXboxOneBC);
+
+        $accessoireXboxOneManette = new Produit();
+        $accessoireXboxOneManette->setProNom("Xbox Manette sans fil Carbon Black avec Câble USB-C pour PC, Xbox Series X, Xbox Series S, Xbox One, Windows 10 & 11, Android et iOS ");
+        $accessoireXboxOneManette->setProPrix(59.93);
+        $accessoireXboxOneManette->setProImage("xboxOneAccessoireManette.jpg");
+        $manager->persist($accessoireXboxOneManette);
+        $categorieXboxOneAccesoires->addProduit($accessoireXboxOneManette);
 //////////////////////////////////////////////////
 
         $categoriePc = new Categorie();
