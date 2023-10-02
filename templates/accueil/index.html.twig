@@ -3,6 +3,12 @@
 {% block title %}Hello AccueilController!{% endblock %}
 
 {% block body %}
+{% if is_granted('ROLE_ADMIN') %}
+TU ES ADMIN !!!!
+{% endif %}
+{% if is_granted('ROLE_COMMERCIAL') %}
+TU ES COMMERCIAL !!!!
+{% endif %}
 <h1 class="text-center my-5"> Nos Catégories </h1>
 
 <div class="container">

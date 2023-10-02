@@ -75,6 +75,7 @@ class RegistrationFormType extends AbstractType
             ->add('uti_telephone')
             ->add('uti_code_postal')
             ->add('uti_pays')
+            ->add('roles')
         ;
     }
 
