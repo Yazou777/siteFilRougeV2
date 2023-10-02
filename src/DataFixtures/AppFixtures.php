@@ -530,22 +530,25 @@ class AppFixtures extends Fixture
         $manager->persist($categoriePcConsole);
 
         $PcCyberpower = new Produit();
-        $PcCyberpower->setProNom("CyberpowerPC Luxe PC Gamer - Intel Core i9-11900KF, Nvidia RTX 3060 12Go, RAM 32Go, SSD NVMe 1To, 650W 80+ PSU, WiFi, Refroidissement Liquide, Windows 11, 4000D Airflow ");
+        $PcCyberpower->setProNom("CyberpowerPC Luxe PC Gamer");
         $PcCyberpower->setProPrix(1310.14);
+        $PcCyberpower->setProDescription("CyberpowerPC Luxe PC Gamer - Intel Core i9-11900KF, Nvidia RTX 3060 12Go, RAM 32Go, SSD NVMe 1To, 650W 80+ PSU, WiFi, Refroidissement Liquide, Windows 11, 4000D Airflow");
         $PcCyberpower->setProImage("pcGamerCyberpower.jpg");
         $manager->persist($PcCyberpower);
         $categoriePcConsole->addProduit($PcCyberpower);
 
         $PcINFOMAX = new Produit();
-        $PcINFOMAX->setProNom("INFOMAX | PC Gamer, Ordinateur de Bureau, PC Gaming - Processeur Intel Core i9-13900KF • NVIDIA RTX 4090 24 GO • RAM DDR5 32 GO RGB • SSD 2 to • BOÎTIER ARGB Aquarius • Watercooling • FREEDOS ");
+        $PcINFOMAX->setProNom("INFOMAX PC GAMER");
         $PcINFOMAX->setProPrix(3669.99);
+        $PcINFOMAX->setProDescription("INFOMAX | PC Gamer, Ordinateur de Bureau, PC Gaming - Processeur Intel Core i9-13900KF • NVIDIA RTX 4090 24 GO • RAM DDR5 32 GO RGB • SSD 2 to • BOÎTIER ARGB Aquarius • Watercooling • FREEDOS");
         $PcINFOMAX->setProImage("pcGamerINFOMAX.jpg");
         $manager->persist($PcINFOMAX);
         $categoriePcConsole->addProduit($PcINFOMAX);
 
         $PcMegaport = new Produit();
-        $PcMegaport->setProNom("Megaport High End PC Gamer • Intel Core i9-11900KF • Windows 11 • Nvidia GeForce RTX4080 • 32Go 3200MHz DDR4 • 1To M.2 SSD • Refroidissement Liquide • Unité Centrale Ordinateur de Bureau ");
+        $PcMegaport->setProNom("Megaport High End PC Gamer");
         $PcMegaport->setProPrix(2269);
+        $PcMegaport->setProDescription("Megaport High End PC Gamer • Intel Core i9-11900KF • Windows 11 • Nvidia GeForce RTX4080 • 32Go 3200MHz DDR4 • 1To M.2 SSD • Refroidissement Liquide • Unité Centrale Ordinateur de Bureau");
         $PcMegaport->setProImage("pcGamerMegaport.jpg");
         $manager->persist($PcMegaport);
         $categoriePcConsole->addProduit($PcMegaport);
@@ -560,22 +563,25 @@ class AppFixtures extends Fixture
         $manager->persist($categoriePcAccesoires);
 
         $accessoirePcBureau = new Produit();
-        $accessoirePcBureau->setProNom("HLFURNIEU 140 × 60 cm Bureau Gaming, Bureau Gamer Informatique Ergonomique, Table Gaming en Fibre de Carbone, Gaming Desk avec Porte Gobelet et Crochet pour Casque, Noir ");
+        $accessoirePcBureau->setProNom("HLFURNIEU Bureau Gaming");
         $accessoirePcBureau->setProPrix(104.95);
+        $accessoirePcBureau->setProDescription("HLFURNIEU 140 × 60 cm Bureau Gaming, Bureau Gamer Informatique Ergonomique, Table Gaming en Fibre de Carbone, Gaming Desk avec Porte Gobelet et Crochet pour Casque, Noir");
         $accessoirePcBureau->setProImage("pcAccessoireBureau.jpg");
         $manager->persist($accessoirePcBureau);
         $categoriePcAccesoires->addProduit($accessoirePcBureau);
 
         $accessoirePcClavier = new Produit();
-        $accessoirePcClavier->setProNom("EMPIRE GAMING - Pack MK800 Filaire - Clavier Gaming AZERTY (Layout Français) RGB 105 Touches 19 Touches Anti-Ghosting - Souris Gamer 2400 DPI - Tapis de Souris - PC PS4 PS5 Xbox One/Series Mac ");
+        $accessoirePcClavier->setProNom("EMPIRE GAMING - Clavier Gaming AZERTY ");
         $accessoirePcClavier->setProPrix(33.99);
+        $accessoirePcClavier->setProDescription("EMPIRE GAMING - Pack MK800 Filaire - Clavier Gaming AZERTY (Layout Français) RGB 105 Touches 19 Touches Anti-Ghosting - Souris Gamer 2400 DPI - Tapis de Souris - PC PS4 PS5 Xbox One/Series Mac");
         $accessoirePcClavier->setProImage("pcAccessoireClavier.jpg");
         $manager->persist($accessoirePcClavier);
         $categoriePcAccesoires->addProduit($accessoirePcClavier);
 
         $accessoirePcEcran = new Produit();
-        $accessoirePcEcran->setProNom("KOORUI 24'' Ecran PC Gaming Incurvé 1800R, Moniteur PC Dalle VA, Résolution FHD (1080P), 165Hz, DCI-P3 90%, Lunette Ultra-Mince, Inclinaison réglable, Prend en Charge HDMI/DP");
+        $accessoirePcEcran->setProNom("KOORUI 24");
         $accessoirePcEcran->setProPrix(129.99);
+        $accessoirePcEcran->setProDescription("KOORUI 24'' Ecran PC Gaming Incurvé 1800R, Moniteur PC Dalle VA, Résolution FHD (1080P), 165Hz, DCI-P3 90%, Lunette Ultra-Mince, Inclinaison réglable, Prend en Charge HDMI/DP");
         $accessoirePcEcran->setProImage("pcAccessoireEcran.jpg");
         $manager->persist($accessoirePcEcran);
         $categoriePcAccesoires->addProduit($accessoirePcEcran);
