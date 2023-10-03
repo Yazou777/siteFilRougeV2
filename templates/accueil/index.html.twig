@@ -6,6 +6,7 @@
 
 {% if app.user %}
 <div>Bonjour {{app.user.getUtiNom}} {{app.user.getUtiPrenom}} </div>
+<div>numero id : {{app.user.getId}}</div>
 {% endif %}
 {% if is_granted('ROLE_ADMIN') %}
 TU ES ADMIN !!!!
