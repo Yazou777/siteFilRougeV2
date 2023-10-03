@@ -3,6 +3,10 @@
 {% block title %}Hello AccueilController!{% endblock %}
 
 {% block body %}
+
+{% if app.user %}
+<div>Bonjour {{app.user.getUtiNom}} {{app.user.getUtiPrenom}} </div>
+{% endif %}
 {% if is_granted('ROLE_ADMIN') %}
 TU ES ADMIN !!!!
 {% endif %}
@@ -17,7 +21,6 @@ TU ES COMMERCIAL !!!!
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 text-center my-5 " >
             <a href="/accueil/{{ f.catnom }}">
                 <img class="imageCategorie" src="/images/{{ f.catimage }}"> 
-             
                 </img>
             </a>
         </div>
