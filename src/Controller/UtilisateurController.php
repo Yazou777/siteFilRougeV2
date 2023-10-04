@@ -46,7 +46,8 @@ class UtilisateurController extends AbstractController
         ]);
     }
 
-   
+ 
+    //#[IsGranted(new Expression('user === utilisateur'))]
     #[Route('/{id}', name: 'app_utilisateur_show', methods: ['GET'])]
     public function show(Utilisateur $utilisateur): Response
     {
@@ -59,6 +60,7 @@ class UtilisateurController extends AbstractController
     #[Route('/{id}/edit', name: 'app_utilisateur_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Utilisateur $utilisateur,UtilisateurRepository $utilisateurRepository,UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+
         $form = $this->createForm(UtilisateurType::class, $utilisateur);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
