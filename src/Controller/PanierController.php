@@ -22,7 +22,7 @@ class PanierController extends AbstractController
         // On initialise des variables
         $data = [];
         $total = 0;
-
+        $totalQte = 0;
         foreach($panier as $id => $quantity){
             $produit = $produitRepository->find($id);
 
@@ -31,9 +31,10 @@ class PanierController extends AbstractController
                 'quantite' => $quantity
             ];
             $total += $produit->getProPrix() * $quantity;
+            $totalQte +=  $quantity;
         }
         //dd($data);
-        return $this->render('panier/index.html.twig',compact('data','total'));
+        return $this->render('panier/index.html.twig',compact('data','total','totalQte'));
     }
 
 

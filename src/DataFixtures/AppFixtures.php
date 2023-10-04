@@ -467,21 +467,24 @@ class AppFixtures extends Fixture
         $manager->persist($categorieXboxOneAccesoires);
 
         $accessoireXboxOneAlim = new Produit();
-        $accessoireXboxOneAlim->setProNom("YCCTEAM Alimentation pour Xbox One AC Adaptateur Secteur Brique Bloc Chargeur Kit de Remplacement de Câble pour Xbox One Console, Auto Tension 100-240V");
+        $accessoireXboxOneAlim->setProNom("YCCTEAM Alimentation pour Xbox One");
+        $accessoireXboxOneAlim->setProDescription('YCCTEAM Alimentation pour Xbox One AC Adaptateur Secteur Brique Bloc Chargeur Kit de Remplacement de Câble pour Xbox One Console, Auto Tension 100-240V');
         $accessoireXboxOneAlim->setProPrix(32.99);
         $accessoireXboxOneAlim->setProImage("xboxOneAccessoireAlimentation.jpg");
         $manager->persist($accessoireXboxOneAlim);
         $categorieXboxOneAccesoires->addProduit($accessoireXboxOneAlim);
 
         $accessoireXboxOneBC = new Produit();
-        $accessoireXboxOneBC->setProNom("Batteries Manette pour Xbox One, Kits Batterie et Chargeur pour Manette Xbox Series X|S avec 2x2800mAh Batteries, Batterie Rechargeable pour Xbox Series X|S/One S/One X/One Elite");
+        $accessoireXboxOneBC->setProNom("Batteries Manette pour Xbox One");
+        $accessoireXboxOneBC->setProDescription("Batteries Manette pour Xbox One, Kits Batterie et Chargeur pour Manette Xbox Series X|S avec 2x2800mAh Batteries, Batterie Rechargeable pour Xbox Series X|S/One S/One X/One Elite");
         $accessoireXboxOneBC->setProPrix(19.99);
         $accessoireXboxOneBC->setProImage("xboxOneAccessoireBatterieChargeur.jpg");
         $manager->persist($accessoireXboxOneBC);
         $categorieXboxOneAccesoires->addProduit($accessoireXboxOneBC);
 
         $accessoireXboxOneManette = new Produit();
-        $accessoireXboxOneManette->setProNom("Xbox Manette sans fil Carbon Black avec Câble USB-C pour PC, Xbox Series X, Xbox Series S, Xbox One, Windows 10 & 11, Android et iOS ");
+        $accessoireXboxOneManette->setProNom("Xbox Manette sans fil Carbon Black");
+        $accessoireXboxOneManette->setProDescription("Xbox Manette sans fil Carbon Black avec Câble USB-C pour PC, Xbox Series X, Xbox Series S, Xbox One, Windows 10 & 11, Android et iOS ");
         $accessoireXboxOneManette->setProPrix(59.93);
         $accessoireXboxOneManette->setProImage("xboxOneAccessoireManette.jpg");
         $manager->persist($accessoireXboxOneManette);

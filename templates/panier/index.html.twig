@@ -6,7 +6,7 @@
 
     <section class="row">
             <div class="col-12">
-                <h1>Panier</h1>
+                <h1>Panier </h1>             
                 <table class="table">
                     <thead>
                         <tr>
@@ -38,7 +38,8 @@
                         </tbody> 
                         <tfoot>
                         <tr>
-                            <td colspan="3">Total</td>
+                            <td colspan="2">Total</td>
+                            <td>{{totalQte}}</td>
                             <td>{{ total}} €</td>
                             <td>
                                 <a href="{{ path('panier_empty') }}" class="btn btn-danger">Vider</a>
