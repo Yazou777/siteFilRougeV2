@@ -27,16 +27,16 @@ class Commande
     #[ORM\JoinColumn(nullable: false)]
     private ?Utilisateur $com_uti = null;
 
-    #[ORM\OneToMany(mappedBy: 'pan_com', targetEntity: Panier::class)]
+    #[ORM\OneToMany(mappedBy: 'pan_com', targetEntity: Panier::class, cascade: ['persist'])]
     private Collection $paniers;
 
     #[ORM\OneToMany(mappedBy: 'bon_com', targetEntity: BonLivraison::class)]
     private Collection $bonLivraisons;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $com_adresse_livraison = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $com_adresse_facturation = null;
 
     public function __construct()
