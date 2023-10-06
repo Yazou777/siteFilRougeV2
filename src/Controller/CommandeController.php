@@ -33,6 +33,7 @@ class CommandeController extends AbstractController
 
      // On remplit la commande
      $commande->setComUti($this->getUser());
+     $commande->setComAdresseLivraison($this->getUser()->getUtiRue()." ".$this->getUser()->getUtiVille()." ".$this->getUser()->getUtiCodePostal()." ".$this->getUser()->getUtiPays());
      //$order->setReference(uniqid());
 
      // On parcourt le panier pour créer les détails de commande
@@ -41,7 +42,6 @@ class CommandeController extends AbstractController
 
          // On va chercher le produit
          $produit = $produitRepository->find($proId);
-         
          $prix = $produit->getProPrix();
 
          // On crée le détail de commande
