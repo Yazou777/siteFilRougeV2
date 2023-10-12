@@ -50,12 +50,20 @@
                         </tbody> 
                         <tfoot>
                         <tr>
-                            <td colspan="2">Total</td>
+                            <td colspan="2">Sous-Total</td>
                             <td>{{totalQte}}</td>
-                            <td>{{ total}} €</td>
+                            <td>{{ sousTotal}} €</td>
                             <td>
                                 <a href="{{ path('panier_empty') }}" class="btn btn-danger">Vider</a>
                             </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Frais de port</td>
+                            <td>{{ fdp}} €</td>
+                        </tr>
+                         <tr>
+                            <td colspan="3">Total</td>
+                            <td>{{total}} €</td>
                         </tr>
                     </tfoot>
                 </table>

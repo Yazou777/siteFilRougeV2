@@ -20,7 +20,16 @@ class CommandeController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(SessionInterface $session, ProduitRepository $produitRepository): Response
     {
+
+        //S'assurer que l'utilisateur soit connecté
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
         $panier = $session->get('panier', []);
+
+        if($panier === []){
+            $this->addFlash('message', 'Votre panier est vide');
+            return $this->redirectToRoute('app_accueil');
+        }
         // form pre remplie
         $commande = new Commande;
         $commandeData = $commande->setComAdresseLivraison($this->getUser()->getUtiRue()." ".$this->getUser()->getUtiVille()." ".$this->getUser()->getUtiCodePostal()." ".$this->getUser()->getUtiPays());
@@ -34,8 +43,10 @@ class CommandeController extends AbstractController
 
         // On initialise des variables
         $data = [];
+        $sousTotal = 0;
         $total = 0;
         $totalQte = 0;
+        $fdp = 5.5;
         foreach($panier as $id => $quantity){
             $produit = $produitRepository->find($id);
 
@@ -43,10 +54,12 @@ class CommandeController extends AbstractController
                 'produit' => $produit,
                 'quantite' => $quantity
             ];
-            $total += $produit->getProPrix() * $quantity;
+            $sousTotal += $produit->getProPrix() * $quantity;
+            //$total += $produit->getProPrix() * $quantity +$fdp;
             $totalQte +=  $quantity;
         }
-        return $this->render('commande/index.html.twig',compact('data','total','totalQte','form'));
+        $total = $sousTotal+$fdp;
+        return $this->render('commande/index.html.twig',compact('data','total','totalQte','form','fdp','sousTotal'));
     }
 
 
